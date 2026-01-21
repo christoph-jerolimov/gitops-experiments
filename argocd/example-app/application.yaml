@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  # namespace: argocd or openshift-gitops
+  name: example-app
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/lftraining/LFS256-code'
+    targetRevision: HEAD
+    path: argocd/example-app
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: example-app
+  syncPolicy:
+    automated:
+      enabled: true
+    syncOptions:
+      - CreateNamespace=true

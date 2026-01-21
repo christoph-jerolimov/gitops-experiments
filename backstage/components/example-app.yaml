@@ -1,0 +1,12 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-app
+  annotations:
+    argocd/app-name: example-app
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:development/guests
+  system: examples

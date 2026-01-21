@@ -4,5 +4,6 @@ metadata:
   name: christoph-jerolimov-gitops-experiments
 spec:
   targets:
+    - ./components/example-app.yaml
     - ./components/nodeinfo.yaml
     - ./components/nodeinfo2.yaml
