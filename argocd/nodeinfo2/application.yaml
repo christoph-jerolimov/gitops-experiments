@@ -2,16 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   # namespace: argocd or openshift-gitops
-  name: nodeinfo
+  name: nodeinfo2
 spec:
   project: nodeinfo
   source:
     repoURL: 'https://github.com/christoph-jerolimov/gitops-experiments.git'
     targetRevision: HEAD
-    path: argocd/nodeinfo/app
+    path: argocd/nodeinfo2/app
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: nodeinfo
+    namespace: nodeinfo2
   syncPolicy:
     automated:
       enabled: true

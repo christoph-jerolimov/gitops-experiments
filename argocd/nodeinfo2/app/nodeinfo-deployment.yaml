@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeinfo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: nodeinfo
+  template:
+    metadata:
+      labels:
+        app: nodeinfo
+    spec:
+      containers:
+        - image: quay.io/jerolimov/nodeinfo
+          name: nodeinfo
+          ports:
+            - containerPort: 8080

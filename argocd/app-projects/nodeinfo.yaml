@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  # namespace: argocd or openshift-gitops
+  name: nodeinfo
+spec:
+  description: nodeinfo applications
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: production
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'

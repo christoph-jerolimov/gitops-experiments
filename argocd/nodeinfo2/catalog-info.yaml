@@ -1,0 +1,12 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: nodeinfo2
+  annotations:
+    argocd/app-name: nodeinfo2
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:development/guests
+  system: examples
