@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/lftraining/LFS256-code'
+    repoURL: 'https://github.com/christoph-jerolimov/LFS256-code'
     targetRevision: HEAD
     path: argocd/example-app
   destination:
