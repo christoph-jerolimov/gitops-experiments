@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: dag-
+spec:
+  entrypoint: whalesay
+  templates:
+    - name: diamond
+      dag:
+        tasks:
+        - name: A
+          template: echo
+        - name: B
+          dependencies: [A]
+          template: echo
+        - name: C
+          dependencies: [A]
+          template: echo
+        - name: D
+          dependencies: [B, C]
+          template: echo
